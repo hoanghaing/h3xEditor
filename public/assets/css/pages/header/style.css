@@ -1,0 +1,35 @@
+body {
+
+}
+
+.toolbar {
+    background-color: #333;
+    overflow: hidden;
+}
+
+.toolbar .tool {
+    float: left;
+    cursor: pointer;
+    padding-right: 8px;
+}
+.toolbar .tool .options {
+    position: fixed;
+    display: none;
+    padding: 5px 0;
+    background: #eee;
+    width: 150px;
+    max-height: calc(100% - 80px);
+    overflow: auto;
+}
+
+.toolbar .tool .title {
+    display: inline-block;
+    color: #888;
+    margin: 0;
+    padding: 8px;
+    line-height: 16px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+
+
