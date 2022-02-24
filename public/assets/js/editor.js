@@ -6,8 +6,11 @@ $(document).ready(function () {
 
 
 function toolbarEvent() {
-    $(toolbar).on("click", ".toolElement", function (){
-        console.log("Clicked the tool");
-    })
+    $(toolbar).on("mouseover", ".toolElement", function (){
+        $(this).children(".options").show();
+    });
+    $(toolbar).on("mouseleave", ".toolElement", function (){
+        $(this).children(".options").hide();
+    });
 }
 
