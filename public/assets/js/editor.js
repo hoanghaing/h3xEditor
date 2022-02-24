@@ -1,3 +1,13 @@
+const toolbar = document.querySelector(".toolbar");
+
 $(document).ready(function () {
-    console.log("This is testing lib");
-})
+    toolbarEvent();
+});
+
+
+function toolbarEvent() {
+    $(toolbar).on("click", ".toolElement", function (){
+        console.log("Clicked the tool");
+    })
+}
+

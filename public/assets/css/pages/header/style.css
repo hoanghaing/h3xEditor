@@ -7,12 +7,12 @@ body {
     overflow: hidden;
 }
 
-.toolbar .tool {
+.toolbar .toolElement {
     float: left;
     cursor: pointer;
     padding-right: 8px;
 }
-.toolbar .tool .options {
+.toolbar .toolElement .options {
     position: fixed;
     display: none;
     padding: 5px 0;
@@ -22,7 +22,7 @@ body {
     overflow: auto;
 }
 
-.toolbar .tool .title {
+.toolbar .toolElement .title {
     display: inline-block;
     color: #888;
     margin: 0;
