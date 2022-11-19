@@ -2,22 +2,25 @@
 <%- include("../partials/sidebar.ejs") %>
 <!DOCTYPE html>
 <html>
-<head>
-<!--    Device Meta config-->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--    Styling css config-->
-    <link rel="stylesheet" href="assets/css/bulma/css/bulma.css">
-    <link rel="stylesheet" href="assets/css/pages/index/style.css">
-<!--    Scripting JS config-->
-    <script src = "assets/libs/jquery/jquery-3.6.0.min.js"></script>
-    <script src = "assets/js/editor.js"></script>
+    <head>
+    <!--    Device Meta config-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--    Styling css config-->
+        <link rel="stylesheet" href="assets/css/bulma/css/bulma.css">
+        <link rel="stylesheet" href="assets/css/pages/index/style.css">
+        <link rel="icon" href="data:,">
+    <!--    Scripting JS config-->
+        <script src = "assets/libs/jquery/jquery-3.6.0.min.js"></script>
+        <script src = "libs/three/three.js"></script>
+        <script src = "libs/three/controls/OrbitControls.js"></script>
 
-</head>
-<body>
-<section class="section">
-    <div class="container">
-    </div>
-</section>
-</body>
+        <script src = "assets/js/editor.js"></script>
+    </head>
+    <body>
+        <div>
+            <div id="editor-container">
+            </div>
+        </div>
+    </body>
 </html>

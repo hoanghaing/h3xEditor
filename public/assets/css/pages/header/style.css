@@ -11,6 +11,7 @@ body {
     float: left;
     cursor: pointer;
     padding-right: 8px;
+    z-index: 20;
 }
 .toolbar .toolElement .options {
     position: fixed;

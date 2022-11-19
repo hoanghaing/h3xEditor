@@ -7,6 +7,6 @@ app.get("/", function (req, res){
     res.render('pages/index');
 });
 
-var port = process.argv[2] || 6789;
+var port = process.argv[2] || 8888;
 app.listen(port);
 console.log("Listening to port: ", port);
