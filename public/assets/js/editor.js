@@ -21,7 +21,7 @@ function initialization() {
     scene.add(light);
 
     pCamera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 1, 10000);
-    pCamera.position.set(0, 20, 0);
+    pCamera.position.set(32, 29, 34);
     // Camera: x,y,z axis
     oCamera = new THREE.OrthographicCamera(0,0,0,0, -100, 1000);
     scene.background = new THREE.Color(0xbbbbbb);
