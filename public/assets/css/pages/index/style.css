@@ -5,7 +5,10 @@
 
 }
 html {
-    scrollbar-width: none;
+    scrollbar-width: none; /* Hide fire-fox scroll bar */
+}
+body::-webkit-scrollbar {
+    display: none; /* Hide chorme scroll bar */
 }
 canvas {
     display: block
