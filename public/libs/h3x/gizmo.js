@@ -180,4 +180,4 @@ class Gizmo extends HTMLElement {
     }
 }
 
-window.customElements.define('gizmo', Gizmo);
+window.customElements.define('editor-gizmo', Gizmo);

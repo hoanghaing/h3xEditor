@@ -1,0 +1,17 @@
+editor-gizmo {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+editor-gizmo:hover {
+    background: rgba(255, 255, 255, .2);
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+editor-gizmo canvas {
+    display: block;
+}

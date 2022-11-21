@@ -2,6 +2,7 @@ const toolbar = document.querySelector(".toolbar");
 
 let scene, renderer;
 let pCamera, oCamera;
+let gizmoDom;
 var container;
 document.addEventListener("DOMContentLoaded", function() {
     container = document.querySelector('#editor-container');
@@ -39,6 +40,18 @@ function initialization() {
     controls = new THREE.OrbitControls(pCamera, renderer.domElement);
     controls.update();
     controls.addEventListener('change', render);
+
+    gizmoDom = new Gizmo(pCamera);
+    container.appendChild(gizmoDom);
+
+    gizmoDom.onAxisSelected = function(axis) {
+        const camera = camSwitcher.scene.activeCamera;
+        var distance = camera.position.distanceTo(controls.target);
+        camera.position.copy(axis.direction.multiplyScalar(distance).add(controls.target));
+        camera.lookAt(controls.target);
+        // $(".orthoCam").addClass("orthoCamActive");
+        // camSwitcher.toOrtho();
+    }
 }
 
 function toolbarEvent() {
@@ -51,6 +64,6 @@ function toolbarEvent() {
 }
 
 function render() {
-    // gizmoDom.update();
+    gizmoDom.update();
     renderer.render(scene, pCamera);
 }
