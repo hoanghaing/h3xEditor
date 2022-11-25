@@ -1,66 +1,65 @@
 <head>
     <link rel="stylesheet" href="assets/css/bulma/css/bulma.css">
     <link rel="stylesheet" href="assets/css/pages/header/style.css">
+    <script src = "libs/h3x/header.js"></script>
 </head>
 <body>
     <div class="toolbar">
         <div class="toolElement">
             <div class="title">File</div>
             <div class="options">
-                <div class="option">New</div>
+                <div class="option" data-action="new" data-type="workspace">New</div>
                 <hr class="dialog-hr">
-                <div class="option">Import Source</div>
+                <div class="option" data-action="import" data-type="source">Import Source</div>
                 <hr class="dialog-hr">
-                <div class="option">Export Geometry</div>
-                <div class="option">Export Object</div>
-                <div class="option">Export Scene</div>
-                <div class="option">Export DAE</div>
-                <div class="option">Export GLB</div>
-                <div class="option">Export GLTF</div>
-                <div class="option">Export OBJ</div>
+                <div class="option" data-action="export" data-type="geometry">Export Geometry</div>
+                <div class="option" data-action="export" data-type="object">Export Object</div>
+                <div class="option" data-action="export" data-type="scene">Export Scene</div>
+                <hr class="dialog-hr">
+                <div class="option" data-action="export" data-type="dae">Export DAE</div>
+                <div class="option" data-action="export" data-type="glb">Export GLB</div>
+                <div class="option" data-action="export" data-type="gltf">Export GLTF</div>
+                <div class="option" data-action="export" data-type="obj">Export OBJ</div>
             </div>
         </div>
         <div class="toolElement">
             <div class="title">Edit</div>
             <div class="options">
-                <div class="option">Undo</div>
+                <div class="option" data-action="undo">Undo</div>
                 <hr class="dialog-hr">
-                <div class="option">Redo</div>
+                <div class="option" data-action="redo">Redo</div>
                 <hr class="dialog-hr">
-                <div class="option">Clone</div>
+                <div class="option" data-action="clone">Clone</div>
                 <hr class="dialog-hr">
-                <div class="option">Delete</div>
+                <div class="option" data-action="delete">Delete</div>
             </div>
         </div>
         <div class="toolElement">
             <div class="title">Add</div>
             <div class="options">
-                <div class="option">File</div>
+                <div class="option" data-action="add" data-type="file">File</div>
                 <hr class="dialog-hr">
-                <div class="option">Text</div>
+                <div class="option" data-action="add" data-type="text">Text</div>
                 <hr class="dialog-hr">
-                <div class="option">Box</div>
-                <div class="option">Circle</div>
-                <div class="option">Cylinder</div>
-                <div class="option">Tetrahedron</div>
-                <div class="option">Torus</div>
+                <div class="option" data-action="add" data-type="box">Box</div>
+                <div class="option" data-action="add" data-type="circle">Circle</div>
+                <div class="option" data-action="add" data-type="cylinder">Cylinder</div>
+                <div class="option" data-action="add" data-type="tetrahedron">Tetrahedron</div>
+                <div class="option" data-action="add" data-type="torus">Torus</div>
             </div>
         </div>
         <div class="toolElement">
             <div class="title">View</div>
             <div class="options">
-                <div class="option">Fullscreen</div>
+                <div class="option" data-action="fullscreen">Fullscreen</div>
             </div>
         </div>
         <div class="toolElement">
             <div class="title">Help</div>
             <div class="options">
-                <div class="option">Source</div>
-                <div class="option">About</div>
+                <div class="option" data-action="source">Source</div>
+                <div class="option" data-action="about">About</div>
             </div>
         </div>
-
-
-
     </div>
 </body>
