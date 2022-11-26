@@ -17,7 +17,7 @@ function initialization() {
     initCamera();
     initGridHelper();
     initAxesHelper();
-    initOrbitControls();
+    initOrbitControls(pCamera);
     initGizMo();
     initCamSwitcher();
 }
@@ -56,8 +56,8 @@ const initAxesHelper = () => {
     scene.add(axesHelper);
 }
 
-const initOrbitControls = () => {
-    controls = new THREE.OrbitControls(pCamera, renderer.domElement);
+const initOrbitControls = (camera) => {
+    controls = new THREE.OrbitControls(camera, renderer.domElement);
     controls.update();
     controls.addEventListener('change', render);
 }
@@ -95,5 +95,5 @@ function toolbarEvent() {
 
 function render() {
     gizmoDom.update();
-    renderer.render(scene, pCamera);
+    renderer.render(scene, scene.activeCamera);
 }
