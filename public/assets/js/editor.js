@@ -2,7 +2,7 @@ const toolbar = document.querySelector(".toolbar");
 
 let scene, renderer;
 let pCamera, oCamera;
-let gizmoDom;
+let gizmoDom, camSwitcher;
 var container;
 document.addEventListener("DOMContentLoaded", function() {
     container = document.querySelector('#editor-container');
@@ -19,6 +19,7 @@ function initialization() {
     initAxesHelper();
     initOrbitControls();
     initGizMo();
+    initCamSwitcher();
 }
 
 const initRendererDom = () => {
@@ -69,12 +70,20 @@ const initGizMo = () => {
         var distance = camera.position.distanceTo(controls.target);
         camera.position.copy(axis.direction.multiplyScalar(distance).add(controls.target));
         camera.lookAt(controls.target);
-        // $(".orthoCam").addClass("orthoCamActive");
-        // camSwitcher.toOrtho();
+        camSwitcher.toOrtho();
     }
 
 }
 
+const initCamSwitcher = () => {
+    camSwitcher = new CameraSwitcher(scene, renderer, pCamera, oCamera);
+    camSwitcher.toPerspective();
+    camSwitcher.onSwitch = function(camera) {
+        controls.object = camera;
+        controls.update();
+        gizmoDom.camera = camera;
+    }
+}
 function toolbarEvent() {
     $(toolbar).on("mouseover", ".toolElement", function (){
         $(this).children(".options").show();
