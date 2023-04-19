@@ -2,7 +2,7 @@ const toolbar = document.querySelector(".toolbar");
 
 let scene, renderer;
 let pCamera, oCamera;
-let gizmoDom;
+let gizmoDom, camSwitcher;
 var container;
 document.addEventListener("DOMContentLoaded", function() {
     container = document.querySelector('#editor-container');
@@ -17,8 +17,9 @@ function initialization() {
     initCamera();
     initGridHelper();
     initAxesHelper();
-    initOrbitControls();
+    initOrbitControls(pCamera);
     initGizMo();
+    initCamSwitcher();
 }
 
 const initRendererDom = () => {
@@ -55,8 +56,8 @@ const initAxesHelper = () => {
     scene.add(axesHelper);
 }
 
-const initOrbitControls = () => {
-    controls = new THREE.OrbitControls(pCamera, renderer.domElement);
+const initOrbitControls = (camera) => {
+    controls = new THREE.OrbitControls(camera, renderer.domElement);
     controls.update();
     controls.addEventListener('change', render);
 }
@@ -69,12 +70,20 @@ const initGizMo = () => {
         var distance = camera.position.distanceTo(controls.target);
         camera.position.copy(axis.direction.multiplyScalar(distance).add(controls.target));
         camera.lookAt(controls.target);
-        // $(".orthoCam").addClass("orthoCamActive");
-        // camSwitcher.toOrtho();
+        camSwitcher.toOrtho();
     }
 
 }
 
+const initCamSwitcher = () => {
+    camSwitcher = new CameraSwitcher(scene, renderer, pCamera, oCamera);
+    camSwitcher.toPerspective();
+    camSwitcher.onSwitch = function(camera) {
+        controls.object = camera;
+        controls.update();
+        gizmoDom.camera = camera;
+    }
+}
 function toolbarEvent() {
     $(toolbar).on("mouseover", ".toolElement", function (){
         $(this).children(".options").show();
@@ -90,5 +99,5 @@ function onFullscreenMode() {
 }
 function render() {
     gizmoDom.update();
-    renderer.render(scene, pCamera);
+    renderer.render(scene, scene.activeCamera);
 }
