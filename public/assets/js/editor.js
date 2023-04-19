@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
     toolbarEvent();
     render();
 });
-
+document.addEventListener('fullscreen',  onFullscreenMode, false )
 function initialization() {
     initRendererDom();
     initPointLight();
@@ -83,7 +83,11 @@ function toolbarEvent() {
         $(this).children(".options").hide();
     });
 }
-
+function onFullscreenMode() {
+    pCamera.aspect = window.screen.width / window.screen.height;
+    pCamera.updateProjectionMatrix();
+    renderer.setSize( window.screen.width, window.screen.height );
+}
 function render() {
     gizmoDom.update();
     renderer.render(scene, pCamera);
