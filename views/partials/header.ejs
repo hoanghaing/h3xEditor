@@ -1,7 +1,7 @@
 <head>
     <link rel="stylesheet" href="assets/css/bulma/css/bulma.css">
     <link rel="stylesheet" href="assets/css/pages/header/style.css">
-    <script src = "libs/h3x/header.js"></script>
+    <script src="assets/js/editor/header.js" type="module"></script>
 </head>
 <body>
     <div class="toolbar">
@@ -25,13 +25,13 @@
         <div class="toolElement">
             <div class="title">Edit</div>
             <div class="options">
-                <div class="option" data-action="undo">Undo</div>
+                <div class="option" data-action="edit" data-action="undo">Undo</div>
                 <hr class="dialog-hr">
-                <div class="option" data-action="redo">Redo</div>
+                <div class="option" data-action="edit" data-action="redo">Redo</div>
                 <hr class="dialog-hr">
-                <div class="option" data-action="clone">Clone</div>
+                <div class="option" data-action="edit" data-action="clone">Clone</div>
                 <hr class="dialog-hr">
-                <div class="option" data-action="delete">Delete</div>
+                <div class="option" data-action="edit" data-action="delete">Delete</div>
             </div>
         </div>
         <div class="toolElement">
@@ -49,16 +49,19 @@
             </div>
         </div>
         <div class="toolElement">
+<<<<<<< HEAD
             <div class="title">View</div>
             <div class="options">
-                <div class="option" data-action="fullscreen">Fullscreen</div>
+                <div class="option" data-action="view" data-type="fullscreen">Fullscreen</div>
             </div>
         </div>
         <div class="toolElement">
+=======
+>>>>>>> 875edf16ab61ebb0875b9ebef0a300c45d77500c
             <div class="title">Help</div>
             <div class="options">
-                <div class="option" data-action="source">Source</div>
-                <div class="option" data-action="about">About</div>
+                <div class="option" data-action="help" data-type="source">Source</div>
+                <div class="option" data-action="help" data-type="about">About</div>
             </div>
         </div>
     </div>

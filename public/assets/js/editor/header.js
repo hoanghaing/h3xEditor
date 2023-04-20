@@ -1,3 +1,4 @@
+import * as actionManager from '../action/action.js'
 var options = document.getElementsByClassName("option")
 document.addEventListener("DOMContentLoaded", function() {
   initOptionsEvent()
@@ -10,6 +11,5 @@ function initOptionsEvent() {
 }
 function optionEventListener() {
   const { action, type } = this.dataset
-  console.log(action)
-  console.log(type)
+  actionManager.execute({action, type})
 }
