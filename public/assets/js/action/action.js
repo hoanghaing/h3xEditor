@@ -20,7 +20,10 @@ const execute = ({ action, type }) => {
       break;
     case ACTION.VIEW:
       viewAction.handle(type)
-      break;        
+      break;
+    case ACTION.KEY:
+      keyAction.handle(type)
+      break; 
   }
 }
 export {
