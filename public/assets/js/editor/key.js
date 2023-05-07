@@ -1,3 +1,7 @@
-document.addEventListener('keypress', function(){
-    console.log('keypress')
+document.addEventListener("contextmenu", (event) => {
+    if (event.code === 'F10') return false
+});
+
+document.addEventListener('keydown', function(event){
+    event.preventDefault()
 })
