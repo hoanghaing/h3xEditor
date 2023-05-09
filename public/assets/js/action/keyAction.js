@@ -1,3 +1,4 @@
+const fullScreenEvt = new Event("fullscreen");
 const fullscreen = () => {
   const editorContainer = document.getElementById('editor-container')
   if (editorContainer.requestFullscreen) {
@@ -8,5 +9,18 @@ const fullscreen = () => {
   } else if (editorContainer.msRequestFullscreen) { /* IE11 */
     editorContainer.msRequestFullscreen();
   }
-  document.dispatchEvent(event);
+  document.dispatchEvent(fullScreenEvt);
+}
+const handle = (type) => {
+  switch (type) {
+    case 'F10':
+      fullscreen()
+      break;
+    default: 
+      break;
+  }
+}
+
+export {
+  handle
 }

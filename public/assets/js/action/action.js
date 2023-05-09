@@ -1,10 +1,12 @@
 import * as viewAction from './viewAction.js'
+import * as keyAction from './keyAction.js'
 const ACTION = {
   ADD: 'add',
   EDIT: 'edit',
   FILE: 'file',
   HELP: 'help',
   VIEW: 'view',
+  KEY: 'key',
   IMPORT: 'import',
   EXPORT: 'export',
 }
