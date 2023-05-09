@@ -11,5 +11,5 @@ function initOptionsEvent() {
 }
 function optionEventListener() {
   const { action, type } = this.dataset
-  actionManager.execute({action, type})
+  actionManager.execute({ action, type })
 }
